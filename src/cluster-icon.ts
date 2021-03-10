@@ -141,6 +141,8 @@ export interface ClusterIconInfo {
    * value of the `title` property passed to the MarkerClusterer.
    */
   title: string;
+
+  className?: string;
 }
 
 /**
@@ -411,8 +413,8 @@ export class ClusterIcon extends OverlayViewSafe {
 
     this.className_ =
       this.cluster_.getMarkerClusterer().getClusterClass() +
-      " " +
-      (this.style.className || "cluster-" + index);
+      " " + 
+      (this.style.className || "cluster-" + index) + " " + (sums.className || '');
   }
 
   /**
